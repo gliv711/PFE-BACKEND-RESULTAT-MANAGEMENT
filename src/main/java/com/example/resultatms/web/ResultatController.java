@@ -16,7 +16,7 @@ public class ResultatController {
 
 
     @GetMapping("/api/Resultat")
-    public Resultat getAllResulta(){
+    public Resultat getAllResultat(){
         return (Resultat) resultatService.getAllResultat();
     }
 }
