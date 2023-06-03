@@ -26,7 +26,10 @@ public class ResultController {
     @Autowired
     private AnswerRepository answerRepository;
 
-
+    @GetMapping("/results/count")
+    public long count(){
+        return surveySubmissionService.count();
+    }
 
     @PostMapping("/results/") @ResponseStatus(HttpStatus.CREATED)
     public void save(@RequestBody Map<String, Object> requestBody) {

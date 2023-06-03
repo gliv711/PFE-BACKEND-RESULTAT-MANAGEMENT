@@ -27,4 +27,8 @@ public class ResultServiceImpl implements ResultService {
     public List<Result> getAll() {
         return resultRepository.findAll();
     }
+    @Override
+    public long count(){
+        return resultRepository.count();
+    }
 }

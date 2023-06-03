@@ -10,4 +10,5 @@ public interface ResultService {
     void save(Result surveySubmission) ;
 
     List<Result> getAll() ;
+    long count();
 }
