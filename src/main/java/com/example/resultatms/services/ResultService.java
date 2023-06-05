@@ -11,4 +11,6 @@ public interface ResultService {
 
     List<Result> getAll() ;
     long count();
+
+    List<Result> getEmailfromSurveys(String domain);
 }

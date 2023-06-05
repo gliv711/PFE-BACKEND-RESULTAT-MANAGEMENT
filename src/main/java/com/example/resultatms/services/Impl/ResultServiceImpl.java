@@ -31,4 +31,9 @@ public class ResultServiceImpl implements ResultService {
     public long count(){
         return resultRepository.count();
     }
+
+    @Override
+    public List<Result> getEmailfromSurveys(String domain) {
+        return resultRepository.findByDomain(domain);
+    }
 }

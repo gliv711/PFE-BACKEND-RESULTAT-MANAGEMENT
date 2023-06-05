@@ -16,4 +16,5 @@ public class Result {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "result_id")
     private List<Question> questions;
+    private int score ;
 }
