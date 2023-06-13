@@ -1,6 +1,7 @@
 package com.example.resultatms.SubmissionController;
 
 import com.example.resultatms.Entity.Answer;
+import com.example.resultatms.Entity.QA;
 import com.example.resultatms.Entity.Question;
 import com.example.resultatms.Entity.Result;
 import com.example.resultatms.Repository.AnswerRepository;
@@ -32,7 +33,7 @@ public class ResultController {
         return surveySubmissionService.count();
     }
 
-    @PostMapping("/results/")
+   /* @PostMapping("/results")
     @ResponseStatus(HttpStatus.CREATED)
     public void save(@RequestBody Map<String, Object> requestBody) {
         // Extract the necessary data from the request body
@@ -91,10 +92,19 @@ public class ResultController {
 
         // Call the surveySubmissionService to save the result
         surveySubmissionService.save(result);
+    }*/
+
+    @PostMapping("/results")
+    public void saveResults(@RequestBody QA QA) {
+
+        System.out.println(QA);
+
     }
 
 
-    @GetMapping("results/domain/{domain}")
+
+
+    @GetMapping("/results/domain/{domain}")
     public List<Result> getAllMailsSurvey(@PathVariable("domain") String domain){
         return surveySubmissionService.getEmailfromSurveys(domain);
     }
@@ -132,4 +142,8 @@ public class ResultController {
         return response;
     }
 
+    @DeleteMapping("/results/{id}")
+    public void deleteResult(@PathVariable("id") Long id ){
+        this.surveySubmissionService.deleteResult(id);
+    }
 }

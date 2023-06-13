@@ -36,4 +36,9 @@ public class ResultServiceImpl implements ResultService {
     public List<Result> getEmailfromSurveys(String domain) {
         return resultRepository.findByDomain(domain);
     }
+
+    @Override
+    public void deleteResult(Long id) {
+        this.resultRepository.deleteById(id);
+    }
 }

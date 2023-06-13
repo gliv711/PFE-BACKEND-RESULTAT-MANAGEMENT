@@ -13,4 +13,5 @@ public interface ResultService {
     long count();
 
     List<Result> getEmailfromSurveys(String domain);
+    void deleteResult(Long id) ;
 }
